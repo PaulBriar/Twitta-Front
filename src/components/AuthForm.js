@@ -22,22 +22,61 @@ class AuthForm extends React.Component {
     })
   }
 
+  renderErrorMsg = () => {
+    const { errors } = this.props;
+
+    if (errors.message) {
+      return (
+        <div className="alert alert-danger">{errors.message}</div>
+      );
+    }
+  }
+
+  renderSignUp = () => {
+    const { signUp, profileImageUrl, username } = this.props;
+
+    if(signUp) {
+      return (
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            className="form-control"
+            id="username"
+            name="username"
+            onChange={this.handleChange}
+            value={username}
+            type="text"
+          />
+          <label htmlFor="image-url">Image Url:</label>
+          <input
+            className="form-control"
+            id="image-url"
+            name="profileImageUrl"
+            onChange={this.handleChange}
+            type="text"
+            value={profileImageUrl}
+          />
+        </div>
+      );
+    }
+  };
+
   render() {
-    const { email, username, profileImageUrl } = this.state;
-    const { heading, buttonText, signUp, errors, history, removeError } = this.props;
+    const { email } = this.state;
+    const { heading, buttonText, history, removeError } = this.props;
 
     history.listen(() => {
       removeError();
-    })
+    });
+
     return (
       <div>
         <div className="row justify-content-md-center text-center">
         <div className="col-md-6">
           <form onSubmit={this.handleSubmit}>
             <h2>{heading}</h2>
-            {errors.message && (
-              <div className="alert alert-danger">{errors.message}</div>
-            )}
+            {/* Display error message if any */}
+            {this.renderErrorMsg()}
             <label htmlFor="email">Email:</label>
             <input
               className="form-control"
@@ -56,28 +95,7 @@ class AuthForm extends React.Component {
               type="password"
             />
             {/* If signUp is true, render username & image url */}
-            {signUp && (
-              <div>
-                <label htmlFor="username">Username:</label>
-                <input
-                  className="form-control"
-                  id="username"
-                  name="username"
-                  onChange={this.handleChange}
-                  value={username}
-                  type="text"
-                />
-                <label htmlFor="image-url">Image Url:</label>
-                <input
-                  className="form-control"
-                  id="image-url"
-                  name="profileImageUrl"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={profileImageUrl}
-                />
-              </div>
-            )}
+            {this.renderSignUp()}
             <button type="submit" className="btn btn-primary btn-block btn-lg">
               {buttonText}
             </button>
