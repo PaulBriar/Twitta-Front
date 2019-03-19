@@ -1,5 +1,13 @@
 import axios from 'axios';
 
+export const setTokenHeader = token => {
+  if (token) {
+    axios.default.headers.common["Authorization"] = `Bearer ${token}`;
+  } else {
+    delete axios.default.headers.common["Authorization"];
+  }
+}
+
 /*
   A wrapper around axios API call that formats errors, etc
   @param {string} method - the http verb we want to use
