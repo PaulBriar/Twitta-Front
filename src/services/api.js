@@ -2,9 +2,9 @@ import axios from 'axios';
 
 export const setTokenHeader = token => {
   if (token) {
-    axios.default.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   } else {
-    delete axios.default.headers.common["Authorization"];
+    delete axios.defaults.headers.common["Authorization"];
   }
 }
 
@@ -14,7 +14,7 @@ export const setTokenHeader = token => {
   @param {string} path - the route path / endpoint
   @param {object} data = (optional) data in JSON form for POST requests
 */
-const apiCall = (method, path, data) => {
+export const apiCall = (method, path, data) => {
   return new Promise((resolve, reject) => {
     return axios[method](path, data)
       .then(res => {
@@ -24,5 +24,3 @@ const apiCall = (method, path, data) => {
     })
   })
 }
-
-export default apiCall;
