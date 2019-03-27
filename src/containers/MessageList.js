@@ -12,7 +12,7 @@ class MessageList extends React.Component {
 		const { messages } = this.props;
 			let messageList = messages.map(message => (
 				<MessageItem
-					key={message.id}
+					key={message._id}
 					date={message.createdAt}
 					text={message.text}
 					username={message.user.username}
