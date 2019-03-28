@@ -1,5 +1,6 @@
 body {
-  background-color: #e6ecf0;
+  background-color: #10171e;
+  font-size: 16px;
 }
 
 /* Nav */
@@ -32,9 +33,11 @@ ul.nav.navbar-nav li {
 }
 
 .onboarding > .navbar{
-  background-image: url("./images/nav-bg.png");
+  background-color: #1c2938;
   background-size: 100% 100%;
 }
+
+/* Hero */
 
 .home-hero {
   width: 100vw;
@@ -56,14 +59,29 @@ ul.nav.navbar-nav li {
   text-shadow: 0 0 8px #66757f;
 }
 
+/* Main */
+
 /* Message List */
+
+.message-area {
+  padding-left: 10px;
+}
 
 #messages .list-group-item {
   display: flex;
   align-items: flex-start;
   padding: 7px 20px 12px;
+  font-size: 18px;
+  background-color: #15202b;
+  color: white;
+  border: 1px solid #38444d;
 }
 
 #messages:not(.hover) .list-group-item:hover {
-  background-color: #e6ecf0;
+  background-color: #101922;
+}
+
+.img-thumbnail {
+  background-color: #15202b;
+  border: 1px solid #38444d;
 }
