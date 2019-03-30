@@ -100,7 +100,7 @@ class AuthForm extends React.Component {
             />
             {/* If signUp is true, render username & image url */}
             {this.renderSignUp()}
-            <button type="submit" className="btn btn-primary btn-block btn-lg">
+            <button type="submit" className="btn btn-primary btn-block btn-lg signBtn">
               {buttonText}
             </button>
           </form>

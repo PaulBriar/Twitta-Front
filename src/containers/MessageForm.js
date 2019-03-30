@@ -13,7 +13,7 @@ class MessageForm extends React.Component {
 	}
 
 	render() {
-		return ( <form onSubmit={this.handleNewMessage}>
+		return ( <form onSubmit={this.handleNewMessage} className="form-group">
 			{this.props.errors.message && (
 				<div className="alert alert-danger">
 					{this.props.errors.message}
@@ -23,9 +23,10 @@ class MessageForm extends React.Component {
 				type="text"
 				className="form-control"
 				value={this.state.message}
+				autoFocus="autofocus"
 				onChange={e => this.setState({ message: e.target.value })}
 			/>
-			<button type="submit" className="btn btn-success pull-right">
+			<button type="submit" className="btn btn-success float-right">
 				Add My Message!
 			</button>
 		</form>

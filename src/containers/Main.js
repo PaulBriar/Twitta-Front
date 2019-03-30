@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Homepage from '../components/Homepage';
 import AuthForm from '../components/AuthForm';
@@ -33,7 +33,7 @@ const Main = props => {
               onAuth={authUser}
               signUp
               buttonText="Sign Me Up!"
-              heading="Join Twitta today."
+              heading="Join Twitta Today."
               {...props} />
           );
         }}/>
