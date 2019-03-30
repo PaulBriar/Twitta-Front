@@ -85,3 +85,21 @@ ul.nav.navbar-nav li {
   background-color: #15202b;
   border: 1px solid #38444d;
 }
+
+.timeline-image {
+  border-radius: 50px;
+  height: 48px;
+  width: 48px;
+  margin: 2px 30px 10px 10px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+button.btn.btn-danger,
+button.btn.btn-danger:hover {
+  color: white;
+}
+
+
