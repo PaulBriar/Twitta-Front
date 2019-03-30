@@ -5,7 +5,7 @@
     },
     "proxies": {
         "/api": {
-            "origin": "https://twitta-server.herokuapp.com/"
+            "origin": "https://twitta-server.herokuapp.com/api"
         }
     }
 }
