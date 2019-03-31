@@ -15,8 +15,8 @@ body {
 }
 
 .navbar a:hover {
-  color: white;
-  text-decoration: underline;
+  color: lightskyblue;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -106,12 +106,9 @@ button.btn.btn-danger:hover {
   color: white;
 }
 
-
-
 .signBtn {
   margin-top: 5px;
 }
-
 
 @media only screen and (max-width: 600px) {
   img.img-thumbnail {
@@ -124,3 +121,4 @@ button.btn.btn-danger:hover {
     display: none;
   }
 }
+

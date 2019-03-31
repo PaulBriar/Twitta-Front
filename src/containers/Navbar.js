@@ -16,7 +16,7 @@ class Navbar extends React.Component {
         <div className="container-fluid">
           <div className="navbar-header">
             <Link to="/" className="navbar-brand">
-              <img src={Logo} alt="Twitta Home" />
+              <img src={Logo} alt="Twitta Home" /> Twitta
             </Link>
           </div>
           {this.props.currentUser.isAuthenticated ? (
