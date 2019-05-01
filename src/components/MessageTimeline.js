@@ -2,12 +2,13 @@ import React from 'react';
 import MessageList from '../containers/MessageList';
 import UserAside from './UserAside';
 
-const MessageTimeline = props => {
+const MessageTimeline = ({profileImageUrl, username}) => {
+	console.log(profileImageUrl);
   return (
 		<div className="row">
 			<UserAside
-				profileImageUrl={props.profileImageUrl}
-				username={props.username}
+				profileImageUrl={profileImageUrl}
+				username={username}
 			/>
 			<MessageList />
 		</div>

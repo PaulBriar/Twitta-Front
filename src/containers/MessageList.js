@@ -10,13 +10,14 @@ class MessageList extends React.Component {
 
 	render() {
 		const { messages, removeMessage, currentUser } = this.props;
+		console.log(messages);
 			let messageList = messages.map(message => (
 				<MessageItem
 					key={message._id}
 					date={message.createdAt}
 					text={message.text}
 					username={message.user.username}
-					profileImageUrl={message.profileImageUrl}
+					profileImageUrl={message.user.profileImageUrl}
 					removeMessage={removeMessage.bind(this, message.user._id, message._id)}
 					isCorrectUser={currentUser === message.user._id}
 				/>
